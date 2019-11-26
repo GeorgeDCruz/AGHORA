@@ -1,0 +1,60 @@
+:root   {
+    --MyWhite: rgb(231, 230, 224);
+    --MyBlack: rgb(18, 18, 18);
+    --MyGrey: rgba(18, 18, 18, 0.2);       }
+
+*   {
+    margin: 0;
+    padding: 0;                         }
+html{
+    max-height: 100vh;                  }
+body    {
+    background: url(/images/UI_01_BG.png) black center no-repeat;
+    background-size: contain;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--MyWhite);                     }
+
+/* Page transition fade */
+body {
+    opacity: 1;
+    transition: 0.7s opacity;           }
+body.fade {
+    opacity: 0;
+    transition: none;                   }
+
+.wrapper{
+    margin: 0 auto;
+    padding: 50px;
+    max-width: 640px;
+    min-height: calc(100vh - 100px);
+    text-align: center;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 20px;
+    align-items: center;
+    justify-items: center;
+
+    /* Prevent text selection: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */ }
+
+header *, main *, footer *  {
+    padding: 5px 0;                     }
+
+header        {
+    line-height: 1.5em;                 }
+header img   {
+    max-width: 80px;                    }
+
+main img    {
+    max-width: 480px;                   }
+
+footer p, h2      {
+    line-height: 1.6em;                 }
+footer img  {
+    max-width: 320px;                   }

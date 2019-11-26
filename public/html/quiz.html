@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+    </style>
+    <link rel="stylesheet" href="/css/quiz.css" />
+    <script>
+        (function(l){var i,s={touchend:function(){}}; for(i in s)l.addEventListener(i,s)})(document);
+    </script>
+    <title>Quiz</title>
+</head>
+<body>
+    <script>document.body.className = 'fade';</script>          <!-- create transition class -->
+    <div class="wrapper">
+        <header id="header">
+            <h3>CHOOSE AN OPTION WHICH YOU THINK IS CORRECT FOR THE QUESTION GIVEN BELOW </h3>
+        </header>
+        <main id="main">
+            <div id="num"></div>
+            <div id="question"></div>
+            <div class="options" id="choiceA" onclick="checkAnswer('A')"></div>
+            <div class="options" id="choiceB" onclick="checkAnswer('B')"></div>
+            <div class="options" id="choiceC" onclick="checkAnswer('C')"></div>
+        </main>
+        <footer>
+            <div id="next" style="display: none"></div>
+        </footer>
+    </div>
+    <!-- deletes transition class -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            document.body.className = '';           });
+    </script>
+    <script src="/js/questions.js"></script>
+    <script src="/js/quiz.js"></script>
+</body>
+</html>

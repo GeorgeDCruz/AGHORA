@@ -1,0 +1,80 @@
+:root   {
+    --MyWhite: rgb(231, 230, 224);
+    --MyBlack: rgb(18, 18, 18);
+    --MyGrey: rgba(18, 18, 18, 0.2);    }
+
+
+*       {
+    margin: 0;
+    padding: 0;                 }
+html, body {
+  overflow: hidden;             }
+html    {
+    max-height: 100vh;          }
+body    {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--MyWhite);   }
+a       {
+    text-decoration: none;
+    color: var(--MyWhite);              }
+
+/* Page transition fade */
+body {
+    opacity: 1;
+    transition: 0.7s opacity;           }
+body.fade {
+    opacity: 0;
+    transition: none;                   }
+
+p       {
+    line-height: 1.8rem;                }
+h4      {
+    font-size: 1rem;
+    line-height: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;  }
+
+.wrapper{
+    margin: 0 auto;
+    padding: 50px;
+    max-width: 640px;
+    min-height: calc(100vh - 100px);
+    display: grid;
+    grid-template-rows: 1fr 1fr auto;
+    justify-items: center;
+
+    /* Prevent text selection: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */ }
+
+button  {
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8rem;
+}
+
+.test {
+    text-transform: uppercase;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 10px;
+    background-color: var(--MyBlack);
+    color: var(--MyWhite);
+    height: 60px;
+    min-width: 200px;                       }
+    
+.test #test:hover {
+    border: 2px solid var(--MyGrey);
+    background-color: var(--MyWhite);
+    color:  var(--MyBlack);                 }
+
+.test:active {
+    border: 1px solid var(--MyGrey);
+    background-color: var(--MyBlack);
+    color: var(--MyWhite);                  }
