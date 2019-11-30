@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,22 +16,80 @@
 
     <title>Sketch</title>
 </head>
+
 <body>
-    <script>document.body.className = 'fade';</script>          <!-- create transition class -->
-   
+    <script>document.body.className = 'fade';</script> <!-- create transition class -->
+
     <div class="wrapper" id="disableScroll">
         <h4>Draw AGHORA on the canvas below</h4>
         <div id="sketch-holder">
             <!-- Our sketch will go here! -->
         </div>
-        <a href="/html/end.html"><button class="test">SUBMIT</button></a>
+        <!-- <a href="#" class="btn-submit"> -->
+        <button class="test btn-submit">SUBMIT</button>
+        <!-- </a> -->
     </div>
 
     <!-- deletes transition class -->
     <script>
-        document.addEventListener("DOMContentLoaded", function(e) {
-            document.body.className = '';           });
+        document.addEventListener("DOMContentLoaded", function (e) {
+            document.body.className = '';
+        });
     </script>
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </html>
+<script>
+    function base64ToBlob(base64, mime) {
+        mime = mime || '';
+        var sliceSize = 1024;
+        var byteChars = window.atob(base64);
+        var byteArrays = [];
+
+        for (var offset = 0, len = byteChars.length; offset < len; offset += sliceSize) {
+            var slice = byteChars.slice(offset, offset + sliceSize);
+
+            var byteNumbers = new Array(slice.length);
+            for (var i = 0; i < slice.length; i++) {
+                byteNumbers[i] = slice.charCodeAt(i);
+            }
+
+            var byteArray = new Uint8Array(byteNumbers);
+
+            byteArrays.push(byteArray);
+        }
+
+        return new Blob(byteArrays, { type: mime });
+    }
+
+    $('.btn-submit').click(function (e) {
+        e.preventDefault();
+        var canvas = document.getElementById("defaultCanvas0");
+        var image = canvas.toDataURL("image/png");
+        var base64ImageContent = image.replace(/^data:image\/(png|jpg);base64,/, "");
+        var blob = base64ToBlob(base64ImageContent, 'image/png');
+        var formData = new FormData();
+        formData.append('picture', blob);
+
+        $.ajax({
+            url: '/draw/save',
+            type: "POST",
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: formData,
+            success:function(resp){
+                if(resp.success){
+                    const filename=resp.filename
+                    alert(filename)
+                }
+            },
+            error:function(err){
+                alert('Failed')
+                console.log(err)
+            }
+        })
+    });
+</script>
