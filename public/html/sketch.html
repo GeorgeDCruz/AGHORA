@@ -82,8 +82,7 @@
             data: formData,
             success:function(resp){
                 if(resp.success){
-                    const filename=resp.filename
-                    alert(filename)
+                    window.location="/html/end.html"
                 }
             },
             error:function(err){
