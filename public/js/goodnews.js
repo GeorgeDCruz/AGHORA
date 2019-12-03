@@ -13,36 +13,6 @@ let data = [
 		headline: 'Flood preparations prove vital',
 		text: 'Peoples decision to allow AGHORA to establish flood safety procedures find use.',
 		index: 'A'
-	},
-	{
-		headline: '1Former Prime Minister found guilty of religious crime.',
-		text: 'AGHORA finds solid evidence to allow the arrest of Marendra Nodi.',
-		index: 'A'
-	},
-	{
-		headline: '2India signs bilateral trade agreement with Pakistan',
-		text: 'The PM thanks AGHORA and hence the people of India for generating right!',
-		index: 'A'
-	},
-	{
-		headline: '3Flood preparations prove vital',
-		text: 'Peoples decision to allow AGHORA to establish flood safety procedures find use.',
-		index: 'A'
-	},
-	{
-		headline: '4Former Prime Minister found guilty of religious crime.',
-		text: 'AGHORA finds solid evidence to allow the arrest of Marendra Nodi.',
-		index: 'A'
-	},
-	{
-		headline: '5India signs bilateral trade agreement with Pakistan',
-		text: 'The PM thanks AGHORA and hence the people of India for generating right!',
-		index: 'A'
-	},
-	{
-		headline: '6Flood preparations prove vital',
-		text: 'Peoples decision to allow AGHORA to establish flood safety procedures find use.',
-		index: 'A'
 	}
 ];
 

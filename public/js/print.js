@@ -5,7 +5,6 @@ exports.printPdf = async (filename) => {
 	try {
 		let goodNews = await news.selectRandomQuestions();
 		let tempGN = goodNews;
-		console.log(tempGN);
 		let gn1 = tempGN[0];
 		let gn2 = tempGN[1];
 		let gn3 = tempGN[2];
