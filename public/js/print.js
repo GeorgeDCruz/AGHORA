@@ -1,25 +1,11 @@
 const CTLPrinter = require('../resources/CTLPrinter.js');
+const news = require('./goodnews');
 
 exports.printPdf = async (filename) => {
 	try {
-		let goodNews = [
-			{
-				headline: 'Former Prime Minister found guilty of religious crime.',
-				text: 'AGHORA finds solid evidence to allow the arrest of Marendra Nodi.',
-				index: 'A'
-			},
-			{
-				headline: 'India signs bilateral trade agreement with Pakistan',
-				text: 'The PM thanks AGHORA and hence the people of India for generating right!',
-				index: 'A'
-			},
-			{
-				headline: 'Flood preparations prove vital',
-				text: 'Peoples decision to allow AGHORA to establish flood safety procedures find use.',
-				index: 'A'
-			}
-		];
+		let goodNews = await news.selectRandomQuestions();
 		let tempGN = goodNews;
+		console.log(tempGN);
 		let gn1 = tempGN[0];
 		let gn2 = tempGN[1];
 		let gn3 = tempGN[2];
